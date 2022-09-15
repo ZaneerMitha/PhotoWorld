@@ -1,0 +1,99 @@
+Model
+Our Model contains 4 interfaces and 5 classes. Starting from the bottom, we have a Color
+interface due to there being more colors other than rbg that take in more than 3 values.
+An example of this would be the colors RGBA, ABGR, ARGB, which take in 4 values.
+However, since we're only working with RGB as of right now, we created a RGBColor class that
+implements the Color interface. If we need to create different types of colors we will be able to
+do so, and those new colors will also be able to implement all the method in the Color interface.
+Next, we created a Posn class that represents a (x,y) position. Due to us doubting that there will
+be different types of positions, since images are 2d, we decided not to create an interface. We
+then created a Pixel interface for the same reason we created a Color interface. There are
+different types of pixels other than the type of pixel we are currently working with it,
+and due to that we just made a BasicPixel class that implements the Pixel interface. A BasicPixel
+is made up of both a Color and a Posn. Our next interface and class is our Image interface and
+BasicImage class. Since we're only working with a regular image, we created the BasicImage class,
+but since there are a ton of different images, such as JPEGs, BMPs, GIFs, PNGs, PSDs, and TIFFs, if
+we were to create any of these other images, they will be able to implement the methods in our
+Image interface, since they're still all images. In this case a BasicImage takes in a 2d array of
+BasicPixels, which has both a Color and Posn. Finally we have a SuperPhotoEditorModel interface
+and a BasicPhotoEditorModel class. This class handles the actual editing of the images (flipping,
+brightening/darkening, grey scaling etc.) We created an interface in case we will be working with
+different types of edits, especially ones that have the same edits (flipping,
+brightening/darkening, grey scaling etc.) + more.
+
+View
+As of right now, our view doesn't have too much since we're not using it all that much. However,
+we created a SuperPhotoEditorView interface and BasicPhotoEditorView class that just renders a
+message.
+
+Controller
+Our controller has a SuperPhotoEditorController interface and a BasicPhotoEditorController class.
+We created the interface just in case there are different functions and controller we need to
+implement in future assignments. The BasicPhotoEditorController class works with the controls
+needed for this assignment, which are load, save, brighten/darkening etc.
+
+Script
+Our program will accept these as command line arguments:
+- load filepath filename (i.e. load images/selfie.ppm selfie)
+- save filepath filename (i.e. save images/selfie.ppm selfie)
+- brighten factor currentName newName (i.e. brighten 10 selfie brightSelfie)
+- vertical-flip currentName newName (i.e. vertical-flip selfie selfie-vertical)
+- horizontal-flip currentName newName (i.e. horizontal-flip selfie selfie-horizontal)
+- value-component currentName newName (i.e. value-component selfie selfie-greyscale)
+- intensity-component currentName newName (i.e. intensity-component selfie selfie-greyscale)
+- luma-component currentName newName (i.e. luma-component selfie selfie-greyscale)
+- red-component currentName newName (i.e. red-component selfie selfie-greyscale)
+- green-component currentName newName (i.e. green-component selfie selfie-greyscale)
+- blue-component currentName newName (i.e. blue-component selfie selfie-greyscale)
+- blur currentName newName (i.e. blur selfie selfie-blur)
+- sharpen currentName newName (i.e. sharpen selfie selfie-sharpen)
+- sepia currentName newName (i.e.sepia selfie selfie-sepia)
+- greyscale currentName newName (i.e. greyscale selfie selfie-greyscale)
+
+
+In order to run this script using our program the user must input one of the above commands in the
+format shown, and based on what the command is the program act accordingly.
+
+We created the sample image that is being used in the assignment and we give permission for
+it to be used.
+
+FOR ASSIGNMENT 5:
+All of the programs we had to work on in this assignment are are complete. We didnt make any design
+changes like we originally thought we would have made. We thought we would have to make new classes for possibly
+different types of pixels but that wasn't needed for this assignment. We also thought we would need to add new classes
+for different types of images, but instead of needing to do that, in order for us to be able to load and save different
+types of images (JPEGs, BMPs, PNGs), we made our previous load and save that was created in Assignment 4 a helper
+method that only loads and saves PPMs, then we created a load and save helper that can load and save non ppm. Our
+actual load and save that can load and save either a ppm or non ppm then takes in both the helpers. We also added the
+new methods (sepia, blur, sharpen and greyscale kernel) to the SuperPhotoEditorModel instead of creating a new
+interface because for this specific case (a program that edits photos), it did not seem justified for us to have a
+program that does not have all of the abilities that we created. If we were to sell this program, then it would make
+sense to have different versions and charge more for versions with more abilities. However, since we are just using
+this for personal use and the purpose of the assignment, we decided to give the PhotoEditor all of the abilities.
+
+FOR ASSIGNMENT 6:
+All of the programs we had to work on in this assignment are are complete. We did not have to change our design at all
+because our code was designed to be extended. We added GUI view and controller classes, so that our program can be run
+from our GUI as well as the console and terminal. The way the user uses the program is by running the GUI controller
+through our main method or through the JAR file. The interface then pops up on the computer, where the user has the
+options to edit any photo they choose. They must first open a file before they try to edit anything, and any attempt
+to edit a photo before opening it prompts an error pop-up. The error pop-ups are designed to let the user know what they
+did wrong, but they do not end the program. This allows for a smooth use of the program and seamless error-handling.
+Once an image is opened, the image is shown on the GUI and its appropriate histograms are also shown. Any edit made to
+the image is possible through the buttons on the left side, and each edit also updates the histogram. Once the user is
+satisfied with their product, they can use the save file button to save their current image to their desired location.
+
+We took the picture that we have used in our example, and give permission to use it.
+
+EXTRA CREDIT (Partial Image Manipulation)
+To add this to our design, we did not have to change any of our old code, because we had previously designed it to be
+open to extension. What we added in our code to support this functionality were two methods and a helper method. The
+helper method iterates through two pictures, the manipulated one and the map, and creates an image that has the pixels
+that are black on the map, manipulated in the final image. The primary method used takes in a fileName, mapName,
+newName, and operation. It then creates a manipulated image and map and then runs the helper method. The reason we had
+to add a separate method that is used to use a component to greyscale is because our design for this feature takes in
+an additional value, which did not make sense for us to add in the switch statement. Lastly, we added conditions in our
+"editPhoto" method that makes user input valid for partial image manipulation as well as normal image manipulation.
+
+
+

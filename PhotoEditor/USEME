@@ -1,0 +1,30 @@
+ASSIGNMENT 6:
+- In order to use our program, you must first run the GUI controller through our main method or through the JAR file.
+- The interface then pops up on the computer, where the user has the options to edit any photo they choose.
+- They must first open a file before they try to edit anything, and any attempt to edit a photo before opening it
+  prompts an error pop-up. The error pop-ups are designed to let the user know what they did wrong.
+- Any edit made to the image is possible through the buttons on the left side, and each edit also updates the histogram.
+
+  Edits:
+- Brightening or Darkening an image is possible by clicking on the "Brightness" button, then inputted a positive number
+  to brighten the image, or a negative number to darken the image. Inputting anything other than a number leads to an
+  error message.
+- Vertically flipping an image is possible by clicking on the "Vertical-Flip" button.
+- Horizontally flipping an image is possible by clicking on the "Horizontal-Flip" button.
+- Grey scaling an image by its value is possible by clicking on the "Value" button.
+- Grey scaling an image by its intensity is possible by clicking on the "Intensity" button.
+- Grey scaling an image by its luma is possible by clicking on the "Luma" button.
+- Grey scaling an image by its red value is possible by clicking on the "Red-Component" button.
+- Grey scaling an image by its green value is possible by clicking on the "Green-Component" button.
+- Grey scaling an image by its blue value is possible by clicking on the "Blue-Component" button.
+- Blurring an image is possible by clicking on the "Blur" button.
+- Sepia toning an image is possible by clicking on the "Sepia" button.
+- Sharpening an image is possible by clicking on the "Sharpen" button.
+- Grey scaling an image is possible by clicking on the "Greyscale" button.
+
+- Once the user is satisfied with their product, they can use the save file button to save their current image to
+  their desired location.
+- They must put in a name they would like to save the file as next to the "Save as" text. After they choose what they
+  would like to name their newly edited file, they must put in either ".png", ".ppm", ".jpg", or ".bmp" right after
+  whatever they named the file (i.e. "hello.png").
+- After saving the file, the user may choose to exit out the program, or open another file and repeat the steps.
