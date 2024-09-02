@@ -26,3 +26,27 @@ TL;DR:
 <img width="1112" alt="Screenshot 2024-09-02 at 5 19 32 AM" src="https://github.com/user-attachments/assets/c88cb2fd-6cb1-4692-be3d-a7856535a962">
 <img width="1112" alt="Screenshot 2024-09-02 at 5 20 03 AM" src="https://github.com/user-attachments/assets/1edca479-64a2-4517-b67c-2fbb0b57f6c2">
 <img width="1112" alt="Screenshot 2024-09-02 at 5 20 35 AM" src="https://github.com/user-attachments/assets/15b1189e-9280-4bb0-8960-9f026fff2dd2">
+
+# Running PhotoWorld on your local machine
+
+## Scripts
+The program will accept these as command line arguments:
+- 'load filepath filename' (i.e. load images/selfie.ppm selfie)
+- save filepath filename (i.e. save images/selfie.ppm selfie)
+- brighten factor currentName newName (i.e. brighten 10 selfie brightSelfie)
+- vertical-flip currentName newName (i.e. vertical-flip selfie selfie-vertical)
+- horizontal-flip currentName newName (i.e. horizontal-flip selfie selfie-horizontal)
+- value-component currentName newName (i.e. value-component selfie selfie-greyscale)
+- intensity-component currentName newName (i.e. intensity-component selfie selfie-greyscale)
+- luma-component currentName newName (i.e. luma-component selfie selfie-greyscale)
+- red-component currentName newName (i.e. red-component selfie selfie-greyscale)
+- green-component currentName newName (i.e. green-component selfie selfie-greyscale)
+- blue-component currentName newName (i.e. blue-component selfie selfie-greyscale)
+- blur currentName newName (i.e. blur selfie selfie-blur)
+- sharpen currentName newName (i.e. sharpen selfie selfie-sharpen)
+- sepia currentName newName (i.e.sepia selfie selfie-sepia)
+- greyscale currentName newName (i.e. greyscale selfie selfie-greyscale)
+
+
+In order to run this script using our program the user must input one of the above commands in the
+format shown, and based on what the command is the program act accordingly.
