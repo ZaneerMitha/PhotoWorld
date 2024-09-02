@@ -31,7 +31,7 @@ TL;DR:
 
 ## Scripts
 The program will accept these as command line arguments:
-- load filepath filename (i.e. load images/selfie.ppm selfie)
+- `load filepath filename` (i.e. load images/selfie.ppm selfie)
 - save filepath filename (i.e. save images/selfie.ppm selfie)
 - brighten factor currentName newName (i.e. brighten 10 selfie brightSelfie)
 - vertical-flip currentName newName (i.e. vertical-flip selfie selfie-vertical)
