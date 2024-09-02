@@ -1,4 +1,4 @@
-# 💬 PhotoWorld Overview
+# 📷 PhotoWorld Overview
 
 ## ℹ️ What is it?
 
